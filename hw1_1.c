@@ -9,7 +9,6 @@
 //3.The grammar for a normal function is exactly the same as main()
 //4.A pair of { } shall start in a new line
 
-
 //打印从1到122 每六个换一行  *hint:for里套for
 //You did a great job! Thanks buddy. Not only the right answer but also using %6d to format it. Perfect.
 //But keep in mind: DO NOT do too much work on detail. In programming, the idea is the first thing.
