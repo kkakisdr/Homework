@@ -1,4 +1,8 @@
+#include <iostream>
 #include <stdio.h>
+#include <cmath>
+
+using namespace std;
 
 //Who's author?
 
@@ -63,17 +67,32 @@ void segment_2()
 //TODO: unfinished. I will show you latter.
 void segment_3() //没写完
 {
-  int k;
-  int f = 0;
-  int num;
-	for (k = 0; k < 122; k++)
- 	 {
-  		printf("%d", k+1);
 
-      if (f%2 == 1){
-        printf("%10d", k+1);
-      }
+  int num = 1;
+  
+  for (int i = 0; i < 122; i++)
+  {
+      
+    if (num == 1)
+    {
+      for (int j = 0; j < 10; j ++)  //for的本质 判断<和加法
+      {
+        printf("%d ", i+1);
+        i += 1;
+      } 
+      num = 0;
     }
+    else 
+    {
+      for (int j = 0; j < 5; j ++)  //for的本质 判断<和加法
+      {
+        printf("%d ", i+1);
+        i += 1;
+      }
+      num = 1;
+    }
+    printf("\n");
+  }
 }
 /*
   	if (j%6 == 0){
@@ -88,7 +107,7 @@ void segment_3() //没写完
 int main()
 {
     //printf("%f\n\n\n",pow(2, 3));
-    segment_1();
+    segment_3();
 }
 
 //hw：打印从1到122 
