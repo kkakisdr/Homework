@@ -1,4 +1,8 @@
+#include <iostream>
 #include <stdio.h>
+#include <cmath>
+
+using namespace std;
 
 //Who's author?
 
@@ -12,29 +16,31 @@
 //打印从1到122 每六个换一行  *hint:for里套for
 //You did a great job! Thanks buddy. Not only the right answer but also using %6d to format it. Perfect.
 //But keep in mind: DO NOT do too much work on detail. In programming, the idea is the first thing.
+//But keep in mind: DO NOT do too much work on detail. In programming, the idea is the first thing.
 void segment_1( )
 {
-  int i = 0;
-  int j = 0;//Put int i into for loop. It's for the sake of safe
+  //Put int i into for loop. It's for the sake of safe
   //If not, you can access your i out of for loop - That's not what you want.
 
-  for (i = 0; i < 122; i++)
+  int k = 1;
+  int o = 1;
+  for (int i = 0; i < 122; k = pow(2, o), o +=1) 
+
   {
-    printf("%6d", i+1);
-
-    j++;
-
-     	if (j%6 == 0){//DO NOT USE % very often. It will waste a lot of calculation.
-  		//if (j == 6) j = 0; 
+      for (int j = 0; j < k; j ++)  //for的本质 判断<和加法
+      {
+        printf("%6d", i+1);
+        i += 1;
+      } //初始化j为0，当j小于6，执行花括号里的任务，每次完成任务让j+1
+      
+      printf("\n");//DO NOT USE % very often. It will waste a lot of calculation.
+      //if (j == 6) j = 0; 
       // that will be better. 
       
       // Keep in mind: different operators will cost different time!!!
       // So, time complexity is a very important thing, which you shall be taught latter.
-      
-      printf("\n");
-  	}
   }
- }
+}
  
  
  
@@ -53,29 +59,40 @@ void segment_2()
   for (k = 0; k < 122; k++)
   {
   	printf("%d", k+1);
-
-     	for (f = num+1; f > 0; f++){
-  		printf("\n");
-
- 		}
-  }
+ 	}
+  printf("\n");
 } 
 
 //TODO: using TODO is a better way for mei xie wan
 //TODO: unfinished. I will show you latter.
 void segment_3() //没写完
 {
-  int k;
-  int f = 0;
-  int num;
-	for (k = 0; k < 122; k++)
- 	 {
-  		printf("%d", k+1);
 
-      if (f%2 == 1){
-        printf("%10d", k+1);
-      }
+  int num = 1;
+  
+  for (int i = 0; i < 122; i++)
+  {
+      
+    if (num == 1)
+    {
+      for (int j = 0; j < 10; j ++)  //for的本质 判断<和加法
+      {
+        printf("%d ", i+1);
+        i += 1;
+      } 
+      num = 0;
     }
+    else 
+    {
+      for (int j = 0; j < 5; j ++)  //for的本质 判断<和加法
+      {
+        printf("%d ", i+1);
+        i += 1;
+      }
+      num = 1;
+    }
+    printf("\n");
+  }
 }
 /*
   	if (j%6 == 0){
@@ -89,7 +106,8 @@ void segment_3() //没写完
 
 int main()
 {
-    segment_2();
+    //printf("%f\n\n\n",pow(2, 3));
+    segment_3();
 }
 
 //hw：打印从1到122 
